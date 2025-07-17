@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login - Lucky's Chat</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title">Lucky's Chat Room</h1>
+
+        <form id="loginForm">
+            <div class="form-field">
+                <label for="emailEntry" class="input-label">Name</label>
+                <input 
+                    type="text" 
+                    id="emailEntry" 
+                    name="email" 
+                    placeholder="uhh ur name" 
+                    required 
+                    class="username-input"
+                />
+                <div id="field-8__validationMessage" class="validation-message"></div>
+            </div>
+
+            <div class="form-field">
+                <label for="passwordEntry" class="input-label">Test Code</label>
+                <input 
+                    type="password" 
+                    id="passwordEntry" 
+                    name="password" 
+                    placeholder="Lucky? verified Test Code here" 
+                    required 
+                    class="username-input"
+                />
+                <div id="field-8__validationMessage" class="validation-message"></div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="chat-button loader" id="next-button">Next</button>
+            </div>
+
+            <div id="formStatusMessage" style="margin-top: 20px; color: green;"></div>
+        </form>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
