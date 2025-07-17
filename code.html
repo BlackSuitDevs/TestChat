@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connecting to Global Chat...</title>
+  <style>
+    body {
+      background-color: #16181d;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #B0B7C5;
+    }
+
+    .loading-container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px;
+      background-color: #1A1D23;
+      border-radius: 8px;
+      border: 5px solid #23262f;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #2b2d31;
+      border-top: 6px solid #4C82FB;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .error-text {
+      font-size: 16px;
+      color: #FF4C4C;
+      font-weight: bold;
+    }
+
+    .retry-button {
+      margin-top: 10px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #4C82FB;
+      color: #FFFFFF;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .retry-button:hover {
+      background-color: #3B6AD9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <div class="error-text">Failed to contact main server:<br>Global Chat unavailable</div>
+    <button class="retry-button" onclick="retryConnection()">Retry</button>
+  </div>
+
+  <script>
+    function retryConnection() {
+      const errorText = document.querySelector('.error-text');
+      errorText.textContent = "Retrying...";
+      setTimeout(() => {
+        errorText.textContent = "Failed to contact main server:\nGlobal Chat unavailable";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
