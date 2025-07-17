@@ -1,3 +1,6 @@
+
+
+/* Reset & Base Layout */
 body {
     background-color: #16181d;
     margin: 0;
@@ -7,25 +10,16 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
-
-
-/*
-CODE STUFF FOR HOME PAGE
-*/
-
-
-
-/* --- Main Page Specific Styles --- */
-
-/* Center the main content */
+/* Container Styling */
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 40px 30px;
     background-color: #1A1D23;
     border-radius: 8px;
     border: 5px solid #23262f;
@@ -35,205 +29,108 @@ CODE STUFF FOR HOME PAGE
     text-align: center;
 }
 
-/* Style for the main title */
+/* Title */
 .title {
     color: #B0B7C5;
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* Style for the subtitle */
-.subtitle {
-    color: #99A1AE;
-    font-size: 1rem;
-    margin-bottom: 25px;
+/* Form Field Wrapper */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-/* Style for the username input field */
 .username-input {
     width: 100%;
-    height: 48px;
-    padding: 0 15px;
+    max-width: 200px; /* Match chat-button */
+    height: auto;
+    padding: 12px 24px; /* Same padding */
     background-color: #2b2d31;
     border: 1px solid #23262f;
-    border-radius: 5px;
+    border-radius: 5px; /* Same border radius */
     color: #99A1AE;
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: border-color 0.2s;
+    font-size: 16px; /* Match font size */
+    font-weight: bold; /* Match text weight */
+    transform: scale(1.1); /* Match button scale */
+    transition: all 0.3s ease-in-out; /* Match transition */
+    box-sizing: border-box;
+    text-align: center; /* Optional: aligns text like a button */
 }
 
-/* Focus state for the input */
+
 .username-input:focus {
     outline: none;
     border-color: #555866;
 }
 
-/* Style for the placeholder text */
 .username-input::placeholder {
     color: #555866;
 }
 
-/* Container for the buttons to create a gap */
-.button-container {
-    display: flex;
-    gap: 15px;
+/* Validation Message */
+.validation-message {
+    color: #FF4C4C;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
-/* Base style for the buttons */
-.chat-button,
-.rules-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    flex: 1; /* Makes buttons fill equal space */
-}
-
-/* Style for the main "Enter Chat" button */
-.chat-button {
-    background-color: #4C82FB; /* A vibrant blue color */
-    color: #FFFFFF;
-}
-
-.chat-button:hover {
-    background-color: #3B6AD9;
-}
-
-.chat-button:active {
-    transform: scale(0.98);
-}
-
-/* Style for the secondary "Rules" button */
-.rules-button {
-    background-color: #2b2d31;
-    color: #B0B7C5;
-    border: 1px solid #23262f;
-}
-
-.rules-button:hover {
-    background-color: #3C3E42;
-}
-
-.rules-button:active {
-    transform: scale(0.98);
-}
-
-
-/* Styles for the locked username input */
-.username-input.locked {
-    cursor: not-allowed; /* Red stop sign cursor */
-    /* Optional: Add visual indication that it's locked */
-    background-color: #23262f; /* Slightly darker background */
-    border-color: #3F444F; /* Darker border */
-}
-
-/* Optional: Error styling for empty input */
-.username-input.input-error {
-    border-color: #FF4C4C; /* Red border for error */
-    box-shadow: 0 0 5px rgba(255, 76, 76, 0.5);
-}
-
-
-
-/*
-RULES PAGE STUFF
-*/
-
-
-
-/* --- Rules Page Specific Styles --- */
-
-/* Container for the rules content, similar to the main-container */
-.rules-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: #1A1D23;
-    border-radius: 8px;
-    border: 5px solid #23262f;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 800px; /* Wider for rules text */
-    width: 90%;
-    text-align: left; /* Align text left for readability */
-    margin: 20px auto; /* Center with margin */
-}
-
-/* Style for the rules title */
-.rules-title {
-    color: #B0B7C5;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-/* Style for the unordered list of rules */
-.rules-list {
-    list-style-type: disc; /* Use disc bullets */
-    color: #99A1AE;
-    font-size: 1rem;
-    line-height: 1.6; /* Spacing between lines */
-    margin-bottom: 30px;
-    padding-left: 25px; /* Indent bullets */
-    width: 100%; /* Ensure list takes full width of container */
-}
-
-/* Style for individual list items */
-.rules-list li {
-    margin-bottom: 15px;
-}
-
-/* Style for the back button, matching existing button styles */
-.back-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    background-color: #2b2d31;
-    color: #B0B7C5;
-    border: 1px solid #23262f;
-}
-
-.back-button:hover {
-    background-color: #3C3E42;
-}
-
-.back-button:active {
-    transform: scale(0.98);
-}
-
-
+/* Error State */
 .username-input.input-error {
     border: 2px solid red;
     background-color: #ffe6e6;
     transition: all 0.3s ease;
 }
 
-.username-input[readonly] {
+/* Readonly State */
+.username-input[readonly],
+.username-input.locked {
     cursor: not-allowed;
+    background-color: #23262f;
+    border-color: #3F444F;
 }
 
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
-/*THIS IS FOR THE LOADER CSS*/
+/* Submit Button */
+.chat-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    transform: scale(1.1);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4C82FB;
+    color: #FFFFFF;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 200px;
+}
 
+.chat-button:hover {
+    background-color: #3B6AD9;
+    transform: scale(1.2);
+}
 
+.chat-button:active {
+    transform: scale(0.98);
+}
 
-/* Loading state with blue outline animation */
-.chat-button.loading,
-.rules-button.loading {
+/* Loader State */
+.chat-button.loading {
     position: relative;
-    pointer-events: none; /* Disable clicks while loading */
+    pointer-events: none;
 }
 
-.chat-button.loading::after,
-.rules-button.loading::after {
+.chat-button.loading::after {
     content: '';
     position: absolute;
     top: -5px;
@@ -251,84 +148,9 @@ RULES PAGE STUFF
     100% { opacity: 1; }
 }
 
-
-
-
-
-.chat-app {
-    width: 95vw;
-    max-width: 1400px;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #1A1D23; /* Updated to match --bg-4 */
-    border-radius: 8px;
-    overflow: hidden;
-    border: 5px solid #23262f;
-}
-
-.chat-container {
-    flex: 1;
-    overflow: hidden; /* ✅ Prevent scrolling */
-    padding: 10px;
-    color: #99A1AE;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* ✅ Keeps newest messages visible */
-}
-
-
-.chat-container .message {
-    padding: 8px;
-    margin: 5px 0;
-    margin-bottom: 10px;
-    background-color: #2f3136; /* Adjust if needed, not directly in midnight */
-    border-radius: 5px;
-    color: #99A1AE; /* Message text color */
-}
-
-.chat-container .message .username {
-    color: #B0B7C5; /* Username color, matching --text-2 */
-    font-weight: bold; /* Optional, to distinguish username */
-}
-
-.chat-container .message .timestamp {
-    color: #3F444F; /* Timestamp color, matching --text-5 */
-    font-size: 12px; /* Optional, to match timestamp style */
-}
-
-.chat-footer {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #1A1D23; /* Match background for consistency */
-    border-top: 1px solid #23262f; /* Adjusted border to fit theme */
-}
-
-.message-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    color: #B0B7C5; /* Match username color for consistency */
-}
-
-.messagesend {
-    background-color: #2b2d31; /* Adjust if needed, not directly in midnight */
-    width: 100%;
-    height: 44px;
-    border-radius: 5px;
-    border: 1px solid #23262f; /* Adjusted to fit theme */
-    padding: 0 12px;
-    color: #99A1AE; /* Match message text color */
-    font-size: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: border-color 0.2s;
-    display: flex;
-    align-items: center;
-}
-
-.messagesend:focus {
-    outline: none;
-    border-color: #272c36;
+/* Status Message */
+#formStatusMessage {
+    margin-top: 20px;
+    color: green;
+    font-size: 0.95rem;
 }
